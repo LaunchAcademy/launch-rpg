@@ -13,4 +13,4 @@
 - A wizard has:
   * Magic Points
   * a `getStatus` that includes their magic points
-  * a `takeDamage` method that has a 25% change of healing
+  * a `takeDamage` method that has a 25% chance of healing
