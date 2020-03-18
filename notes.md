@@ -1,5 +1,33 @@
 # Launch RPG
 
+- Create character class
+  - Constructor
+  - state
+  - getters
+  - getStatus
+    - use SB because that's what `+` does anyway
+  - create main
+    - create 2 characters
+    - create ArrayList party
+      - party.add
+    - Sb
+      - for Character character : party
+      - sb.append(character.getStatus())
+- Create NPC class
+  - extends Character
+  - Constructor with
+    - super(each|args)
+  - @Override
+    - getStatus()
+    - return "(Computer\n)" super.getStatus();
+  - return to character class
+    - create an NPC (NPC name = new NPC(stats))
+    - add to party
+- Create Wizard Class
+  - Constructor (same as other + maxMagicPoints)
+  - super (args)
+  - this.maxMP and this.currentMP
+  - @Override getStatus to append MP
 ## Characters
 
 - Characters have:
