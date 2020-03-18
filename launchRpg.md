@@ -4,9 +4,9 @@
 
 - Characters have:
   * A character name
-  * Hitpoints
+  * Hitpoints (both current and Max)
   * A default weapon
-  * a `getStatus`
+  * a `getStatus` method
   * a `takeDamage` method
 - Nonplayer Characters have:
   * a `getStatus` that indicates it's a non player character
