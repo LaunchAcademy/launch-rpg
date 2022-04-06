@@ -1,69 +1,41 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Character {
   private String name;
-  private int currentHitpoints;
-  private int maxHitpoints;
-  private String defaultWeapon;
+  private int maxEnergyPoints;
+  private String weapon;
+  private int currentEnergyPoints;
 
-  Character(String name, int maxHitpoints, String defaultWeapon) {
+  public Character(String name, int maxEnergyPoints, String weapon) {
     this.name = name;
-    this.maxHitpoints = maxHitpoints;
-    this.currentHitpoints = maxHitpoints;
-    this.defaultWeapon = defaultWeapon;
+    this.weapon = weapon;
+    this.maxEnergyPoints = maxEnergyPoints;
+    this.currentEnergyPoints = maxEnergyPoints;
   }
 
   public String getName() {
     return name;
   }
 
-  public int getMaxHitpoints() {
-    return maxHitpoints;
-  }
 
-  public String getDefaultWeapon() {
-    return defaultWeapon;
-  }
 
   public String getStatus() {
-    StringBuilder sb = new StringBuilder();
-    sb.append(name);
-    sb.append("\n");
-    sb.append("---\nCurrent Health: ");
-    sb.append(currentHitpoints);
-    sb.append(" / ");
-    sb.append(maxHitpoints);
-    return sb.toString();
+    String status = name + "\n------\n";
+    status += "Energy: " + currentEnergyPoints + "/" + maxEnergyPoints + "\n";
+    return status;
   }
 
-  public static void main(String[] args) {
-    Character christianTheStrong = new Character("Christian",
-      50,
-      "Brass Knuckles");
-    Character cameronTheBold = new Character("Cameron",
-      51,
-      "Battle Axe");
-    Character amberTheStrongFemaleProtagonist = new Character("Amber",
-      60,
-      "Bubble Tea Straw");
-    ComputerCharacter apprentiBot = new ComputerCharacter("Apprenti Bot",
-      80,
-      "Freaking laser beams");
-    Wizard matteaTheWise = new Wizard("Mattea", 40, "Staff", 50);
-
-    ArrayList<Character> party = new ArrayList<Character>();
-    party.add(amberTheStrongFemaleProtagonist);
-    party.add(cameronTheBold);
-    party.add(christianTheStrong);
-    party.add(apprentiBot);
-    party.add(matteaTheWise);
-
-    StringBuilder sb = new StringBuilder();
-    for(Character character : party) {
-      sb.append(character.getStatus());
-      sb.append("\n\n");
+  public void takeDamage(int damage) {
+    // if the damage brings them down to 0 energy,
+    if(damage >= currentEnergyPoints) {
+    // alert the user that their character died
+      System.out.println("Your character " + name + " has died, please play again!");
+    // and change the currentEnergyPoints to 0
+      currentEnergyPoints = 0;
+    } else {
+      // otherwise, decrease the currentEnergyPoints by the provided damage
+      currentEnergyPoints -= damage;
     }
-
-    System.out.println(sb.toString());
   }
 }

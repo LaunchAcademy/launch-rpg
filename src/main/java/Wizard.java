@@ -2,20 +2,20 @@ public class Wizard extends Character {
   private int maxMagicPoints;
   private int currentMagicPoints;
 
-  public Wizard(String name, int maxHitpoints, String defaultWeapon, int maxMagicPoints) {
-    super(name, maxHitpoints, defaultWeapon);
+  public Wizard(String name, int maxEnergyPoints, String weapon, int maxMagicPoints) {
+    super(name, maxEnergyPoints, weapon);
     this.maxMagicPoints = maxMagicPoints;
-    this.currentMagicPoints = maxMagicPoints;
+    this.currentMagicPoints = maxMagicPoints - 10;
   }
 
   @Override
   public String getStatus() {
-    StringBuilder sb = new StringBuilder();
-    sb.append(super.getStatus());
-    sb.append("\nMagic Points:");
-    sb.append(currentMagicPoints);
-    sb.append(" / ");
-    sb.append(maxMagicPoints);
-    return sb.toString();
+    String status = super.getStatus();
+    status += "Magic: " + currentMagicPoints + "/" + maxMagicPoints + "\n";
+    return status;
+  }
+
+  public void castSpell(int requiredMagic) {
+    currentMagicPoints -= requiredMagic;
   }
 }

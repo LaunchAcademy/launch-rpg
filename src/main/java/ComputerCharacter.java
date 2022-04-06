@@ -1,6 +1,6 @@
 public class ComputerCharacter extends Character {
-  public ComputerCharacter(String name, int maxHitpoints, String defaultWeapon) {
-    super(name, maxHitpoints, defaultWeapon);
+  public ComputerCharacter(String name, int maxEnergyPoints, String weapon) {
+    super(name, maxEnergyPoints, weapon);
   }
 
   @Override

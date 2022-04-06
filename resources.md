@@ -1,0 +1,2 @@
+- Video: https://learn.launchacademy.com/teams/apprenti-2/lesson_supplement_weeks/395/lesson_supplements/2952
+- Code: https://learn.launchacademy.com/teams/apprenti-2/lesson_supplement_weeks/395/lesson_supplements/2953
